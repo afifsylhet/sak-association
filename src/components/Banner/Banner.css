@@ -1,0 +1,30 @@
+
+
+
+@keyframes changewidth {
+    0% {
+        transform: rotate(-30deg);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.7);
+    }
+  }
+  
+  .banner {
+    animation-delay: 0.3s;
+    animation-duration: 2s;
+    animation-name: changewidth;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
+  }
+
+  .carsol-bg{
+      background-color: rgba(255, 255, 255, 0.562);
+  }

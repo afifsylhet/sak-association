@@ -1,0 +1,15 @@
+.gallery-item:hover{
+    transform: scale(1.25);
+    transition: transform 2s;
+}
+
+.caption{
+    background-color: rgba(0, 0, 0, 0.651);
+    color: white;
+    padding:10px;
+    position: absolute;
+    bottom: 7px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+}
