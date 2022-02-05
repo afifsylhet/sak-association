@@ -8,7 +8,7 @@ const Banner = () => {
         <Container fluid>
             <br />
             <Row>
-                <Col xs={12} md={12} lg={6}>
+                <Col xs={12} md={12} lg={6} style={{ zIndex: "2" }}>
                     <h1 className='text-primary'>Welcome to <span className='text-secondary' >SAK Assiocation</span> </h1>
                     <br />
                     <div className='d-flex align-items-center justify-content-center banner'>
@@ -17,7 +17,7 @@ const Banner = () => {
                     <br />
 
                 </Col>
-                <Col xs={12} md={12} lg={6} className='ps-2'>
+                <Col xs={12} md={12} lg={6} className='ps-2' style={{ zIndex: "1" }}>
 
 
                     <Carousel variant='dark'>

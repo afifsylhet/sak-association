@@ -1,7 +1,5 @@
 import './App.css';
 import About from './components/About/About';
-import BarCharta from './components/chart/BarChart/BarChart';
-import LineCharta from './components/chart/LineChart/LineChart';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';

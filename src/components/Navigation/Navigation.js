@@ -3,10 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRunning } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import useAuth from '../../utilities/useAuth';
 
 const Navigation = () => {
+    const { user, handleLogout } = useAuth();
     const element = <FontAwesomeIcon icon={faRunning} />
+
+
+
 
     return (
         <div>
@@ -36,13 +41,18 @@ const Navigation = () => {
                                 Dashboard
                             </NavLink>
                         </Nav>
-                        <NavLink to="login" style={{ textDecoration: "none", color: "white" }} className='pe-4'>
-                            <Button variant="outline-light" >Log In</Button>
-                        </NavLink>
+                        {user.email ?
+                            <Button variant="outline-light" onClick={handleLogout} className="pe-4"> Logout</Button>
+                            :
+                            <Button as={NavLink} to="/login" variant="outline-light" className='pe-4' >Log In</Button>}
+
+                        {!user.email &&
+                            <Button as={NavLink} to="/register" variant="outline-light" className='ms-4' >Register</Button>}
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+        </div >
     );
 };
 
