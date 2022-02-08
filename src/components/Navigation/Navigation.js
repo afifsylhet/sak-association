@@ -25,29 +25,32 @@ const Navigation = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <NavLink to="/home" style={{ textDecoration: "none", color: "white" }} className='pe-4'>
+                            <NavLink to="/home" style={{ textDecoration: "none", color: "white" }} className='pe-3'>
                                 Home
                             </NavLink>
-                            <NavLink to="/about" style={{ textDecoration: "none", color: "white" }} className='pe-4'>
+                            <NavLink to="/about" style={{ textDecoration: "none", color: "white" }} className='pe-3'>
                                 About
                             </NavLink>
-                            <NavLink to="/mission" style={{ textDecoration: "none", color: "white" }} className='pe-4'>
+                            <NavLink to="/members" style={{ textDecoration: "none", color: "white" }} className='pe-3'>
+                                All Members
+                            </NavLink>
+                            <NavLink to="/mission" style={{ textDecoration: "none", color: "white" }} className='pe-3'>
                                 Our Mission
                             </NavLink>
-                            <NavLink to="/allchart" style={{ textDecoration: "none", color: "white" }} className='pe-4'>
+                            <NavLink to="/allchart" style={{ textDecoration: "none", color: "white" }} className='pe-3'>
                                 At a Glance
                             </NavLink>
-                            <NavLink to="/dashboard" style={{ textDecoration: "none", color: "white" }} className='pe-4'>
+                            <NavLink to="/dashboard" style={{ textDecoration: "none", color: "white" }} className='pe-3'>
                                 Dashboard
                             </NavLink>
                         </Nav>
                         {user.email ?
-                            <Button variant="outline-light" onClick={handleLogout} className="pe-4"> Logout</Button>
+                            <Button variant="outline-light" onClick={handleLogout} className="pe-3"> Logout</Button>
                             :
-                            <Button as={NavLink} to="/login" variant="outline-light" className='pe-4' >Log In</Button>}
+                            <Button as={NavLink} to="/login" variant="outline-light" className='pe-3' >Log In</Button>}
 
                         {!user.email &&
-                            <Button as={NavLink} to="/register" variant="outline-light" className='ms-4' >Register</Button>}
+                            <Button as={NavLink} to="/register" variant="outline-light" className='ms-3' >Register</Button>}
 
                     </Navbar.Collapse>
                 </Container>

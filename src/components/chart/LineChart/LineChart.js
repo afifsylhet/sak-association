@@ -1,58 +1,13 @@
 import React from 'react';
 import { XAxis, YAxis, CartesianGrid, Tooltip, AreaChart, Area, ResponsiveContainer } from 'recharts';
-
-const data = [
-    {
-        "name": "Sep-2021",
-        "Collection": 136000,
-        "Target": 136000
-    },
-    {
-        "name": "Oct-2021",
-        "Collection": 130000,
-        "Target": 136000
-    },
-    {
-        "name": "Nov-2021",
-        "Collection": 128000,
-        "Target": 136000
-    },
-    {
-        "name": "Dec-2021",
-        "Collection": 132000,
-        "Target": 136000
-    },
-    {
-        "name": "Jan-2022",
-        "Collection": 120000,
-        "Target": 136000
-    },
-    {
-        "name": "Feb-2022",
-        "Collection": 432000,
-        "Target": 476000
-    },
-    {
-        "name": "Mar-2022",
-        "Collection": 0,
-        "Target": 136000
-    },
-    {
-        "name": "Apr-2022",
-        "Collection": 0,
-        "Target": 136000
-    },
-    {
-        "name": "May-2022",
-        "Collection": 0,
-        "Target": 136000
-    },
-]
+import { useAuth } from '../../../utilities/useAuth'
 
 
 
 
 const LineCharta = () => {
+    const { deposits } = useAuth();
+
     return (
         <div>
             <br />
@@ -63,7 +18,7 @@ const LineCharta = () => {
 
             <div className='container overflow-scroll d-flex justify-content-center'>
                 <ResponsiveContainer width={"100%"} height={300} >
-                    <AreaChart data={data}
+                    <AreaChart data={deposits}
                     >
                         <defs>
                             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -79,8 +34,8 @@ const LineCharta = () => {
                         <YAxis />
                         <CartesianGrid strokeDasharray="3 3" />
                         <Tooltip />
-                        <Area type="monotone" dataKey="Collection" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-                        <Area type="monotone" dataKey="Target" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
+                        <Area type="monotone" dataKey="collection" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+                        <Area type="monotone" dataKey="target" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
                     </AreaChart>
                 </ResponsiveContainer>
             </div>

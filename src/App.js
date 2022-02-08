@@ -15,6 +15,8 @@ import {
 } from "react-router-dom";
 import AllChart from './components/AllChart/AllChart';
 import AuthProvider from './utilities/AuthProvider';
+import Deshboard from './components/Deshboard/Deshboard';
+import AllMembers from './components/AllMembers/AllMembers';
 
 
 function App() {
@@ -31,8 +33,9 @@ function App() {
               <Route path="/mission" element={<OurMission />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/register" element={<Register />} />
+              <Route path="/dashboard" element={<Deshboard />} />
               <Route path="/allChart" element={<AllChart />} />
+              <Route path="/members" element={<AllMembers />} />
 
             </Route>
           </Routes>

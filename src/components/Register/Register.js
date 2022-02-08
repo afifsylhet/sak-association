@@ -6,7 +6,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
-    const { password, confirmPassword, setUser, setIsLoading, passwordSignUp, gotEmail, gotPassword, gotConfirmPassword, setError, } = useAuth();
+    const { error, password, confirmPassword, setUser, setIsLoading, passwordSignUp, gotEmail, gotPassword, gotConfirmPassword, setError, } = useAuth();
 
     const location = useLocation();
     const navigate = useNavigate();

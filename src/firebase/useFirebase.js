@@ -7,6 +7,9 @@ import { getAuth, signOut, onAuthStateChanged, createUserWithEmailAndPassword, s
 
 firebaseInit()
 const useFirebase = () => {
+    const [members, setMembers] = useState([]);
+    const [deposits, setDeposits] = useState([])
+
     const [isLoading, setIsLoading] = useState(true);
     const [user, setUser] = useState({});
     const [error, setError] = useState("");
@@ -61,7 +64,18 @@ const useFirebase = () => {
 
     }, [auth]);
 
+    useEffect(() => {
+        fetch('http://localhost:5001/deposit')
+            .then((res) => res.json())
+            .then((data) => setDeposits(data))
+    }, [])
 
+
+    useEffect(() => {
+        fetch('http://localhost:5001/members')
+            .then((res) => res.json())
+            .then((data) => setMembers(data))
+    }, [])
 
     return {
         user,
@@ -83,6 +97,9 @@ const useFirebase = () => {
         passwordLogin,
         passwordSignUp,
         handleLogout,
+
+        members,
+        deposits
     }
 }
 
