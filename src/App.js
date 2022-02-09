@@ -17,6 +17,7 @@ import AllChart from './components/AllChart/AllChart';
 import AuthProvider from './utilities/AuthProvider';
 import Deshboard from './components/Deshboard/Deshboard';
 import AllMembers from './components/AllMembers/AllMembers';
+import PraviteRoute from './utilities/PraviteRoute';
 
 
 function App() {
@@ -29,7 +30,14 @@ function App() {
             <Route >
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/about" element={<About />} />
+
+              <Route path="/about" element={<PraviteRoute ><About /></PraviteRoute>}>
+              </Route>
+
+
+
+
+
               <Route path="/mission" element={<OurMission />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />

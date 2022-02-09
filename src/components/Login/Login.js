@@ -11,14 +11,15 @@ const Login = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const redirectUrl = location.state?.from || '/home';
+    let from = location.state?.from?.pathname || '/home';
+
 
     const loginByPassword = (e) => {
         passwordLogin()
             .then((result) => {
                 const user = result.user;
                 setUser(user)
-                navigate.push(redirectUrl)
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 const errorMessage = error.message;

@@ -65,14 +65,14 @@ const useFirebase = () => {
     }, [auth]);
 
     useEffect(() => {
-        fetch('http://localhost:5001/deposit')
+        fetch('https://fathomless-brook-19340.herokuapp.com/deposit')
             .then((res) => res.json())
             .then((data) => setDeposits(data))
     }, [])
 
 
     useEffect(() => {
-        fetch('http://localhost:5001/members')
+        fetch('https://fathomless-brook-19340.herokuapp.com/members')
             .then((res) => res.json())
             .then((data) => setMembers(data))
     }, [])

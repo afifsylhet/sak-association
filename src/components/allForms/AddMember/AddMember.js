@@ -49,7 +49,7 @@ const AddMember = () => {
         console.log(newMember)
 
         if (!error) {
-            fetch('http://localhost:5001/members', {
+            fetch('https://fathomless-brook-19340.herokuapp.com/members', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newMember)

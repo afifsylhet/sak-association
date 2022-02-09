@@ -23,7 +23,7 @@ const AddDeposit = () => {
         console.log(newDeposit)
 
         if (newDeposit) {
-            fetch('http://localhost:5001/deposit', {
+            fetch('https://fathomless-brook-19340.herokuapp.com/deposit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newDeposit)

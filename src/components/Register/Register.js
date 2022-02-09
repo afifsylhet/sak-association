@@ -10,7 +10,7 @@ const Register = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const redirectUrl = location.state?.from || '/home';
+    let from = location.state?.from?.pathname || '/home';
 
     const signUpByPassword = (e) => {
         e.preventDefault()
@@ -25,8 +25,8 @@ const Register = () => {
                     const user = result.user;
                     setUser(user)
                     setError("")
-                    navigate.push(redirectUrl)
-                    console.log(user)
+                    navigate(from, { replace: true })
+                    // console.log(user)
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
